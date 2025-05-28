@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Sorry, My Bestie - Poetic Apology</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;700&family=Great+Vibes&display=swap');
+
+  /* Reset and base */
+  * {
+    box-sizing: border-box;
+  }
+  body {
+    margin: 0; padding: 0;
+    font-family: 'Cormorant Garamond', serif;
+    background: linear-gradient(135deg, #e3d5b8, #a57e29);
+    color: #4a2c0f;
+    min-height: 100vh;
+    overflow-x: hidden;
+  }
+  main {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 40px 20px 80px 20px;
+  }
+  h1, h2 {
+    font-family: 'Great Vibes', cursive;
+    text-align: center;
+    color: #7c4a16;
+    text-shadow: 1px 1px 3px rgba(179,122,29,0.8);
+  }
+  h1 {
+    font-size: 4rem;
+    margin-bottom: 10px;
+  }
+  h2 {
+    font-size: 2.8rem;
+    margin-bottom: 30px;
+  }
+  p.large-poem {
+    font-size: 1.45rem;
+    line-height: 1.8;
+    margin-bottom: 40px;
+    text-align: justify;
+    text-indent: 40px;
+    color: #5c3b0c;
+    user-select: none;
+    max-width: 100%;
+    white-space: pre-line;
+  }
+  /* Stylish Next Button */
+  button#nextBtn {
+    display: block;
+    margin: 0 auto;
+    padding: 18px 48px;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: #f9f1e0;
+    background: linear-gradient(45deg, #a57e29, #d1a541);
+    border: none;
+    border-radius: 40px;
+    cursor: pointer;
+    box-shadow: 0 8px 20px rgba(179,122,29,0.8);
+    transition: background 0.4s ease, box-shadow 0.4s ease;
+    user-select: none;
+  }
+  button#nextBtn:hover,
+  button#nextBtn:focus {
+    background: linear-gradient(45deg, #d1a541, #a57e29);
+    box-shadow: 0 12px 30px rgba(209,165,65,0.9);
+    outline: none;
+  }
+
+  /* Floating quotes styling */
+  .floating-quote {
+    position: fixed;
+    font-family: 'Great Vibes', cursive;
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: rgba(181, 135, 20, 0.12);
+    user-select: none;
+    pointer-events: none;
+    text-shadow: 1px 1px 3px #b37a1d;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+    z-index: 0;
+  }
+  .fq1 { top: 10vh; left: 15vw; animation: floatX 20s ease-in-out infinite; }
+  .fq2 { top: 50vh; left: 70vw; animation: floatY 22s ease-in-out infinite 4s; }
+  .fq3 { top: 80vh; left: 40vw; animation: floatX 25s ease-in-out infinite 7s; }
+  .fq4 { top: 30vh; left: 80vw; animation: floatY 27s ease-in-out infinite 2s; }
+
+  @keyframes floatX {
+    0% { transform: translateX(0); opacity: 0.1; }
+    50% { transform: translateX(25px); opacity: 0.2; }
+    100% { transform: translateX(0); opacity: 0.1; }
+  }
+  @keyframes floatY {
+    0% { transform: translateY(0); opacity: 0.1; }
+    50% { transform: translateY(-25px); opacity: 0.2; }
+    100% { transform: translateY(0); opacity: 0.1; }
+  }
+
+  /* Responsive */
+  @media (max-width: 768px) {
+    h1 { font-size: 3rem; }
+    h2 { font-size: 2.2rem; }
+    p.large-poem {
+      font-size: 1.2rem;
+      text-indent: 20px;
+    }
+    button#nextBtn {
+      font-size: 1.3rem;
+      padding: 14px 36px;
+    }
+  }
+</style>
+</head>
+<body>
+<main>
+
+<!-- Landing Page -->
+<section id="landing" tabindex="0" aria-label="Welcome page">
+  <h1>Sorry, My Bestie</h1>
+  <p style="text-align:center; font-size:1.3rem; font-style: italic; max-width: 600px; margin: 0 auto 50px auto;">
+    “In the quiet spaces between words,<br />
+    I send my heart — a humble apology,<br />
+    Wrapped in vintage hues and tender poetry.<br />
+    Please forgive me, dear friend.”
+  </p>
+  <button id="nextBtn" aria-controls="quotes" aria-label="Go to quotes and poems">Next</button>
+</section>
+
+<!-- Quotes & Poetry Page -->
+<section id="quotes" tabindex="0" aria-label="Poetic quotes and apology verses" style="display:none;">
+  <h2>Words From the Heart</h2>
+
+  <p class="large-poem" aria-live="polite">
+In the quiet dawn of our friendship, shadows fell between us,
+Like silent whispers carried by a gentle breeze,
+I stand here with a heart laid bare, hoping these words
+Can bridge the distance, heal the fractures unseen.
+Forgive me, dear bestie, for the times I faltered,
+For the words left unspoken and moments misplaced.
+Our bond is a tapestry woven with laughter and tears,
+And though frayed, it holds the strength of countless memories.
+Let my apology be the light that guides us back,
+Where understanding blooms and trust is renewed.
+For friendship, like the rarest flower, deserves care,
+And my soul longs to nurture what was almost lost.
+So hear me now, with an open heart and gentle grace—
+I’m sorry, my best friend, for every hurt and every silence,
+And I vow to cherish you more, come what may.<br><br>
+  </p>
+
+  <!-- floating quotes -->
+  <div class="floating-quote fq1">“Sorry is the soul’s poetry.”</div>
+  <div class="floating-quote fq2">“Forgive me, my bestie.”</div>
+  <div class="floating-quote fq3">“From my heart, always.”</div>
+  <div class="floating-quote fq4">“Mending bridges with words.”</div>
+</section>
+
+</main>
+
+<script>
+  const nextBtn = document.getElementById('nextBtn');
+  const landing = document.getElementById('landing');
+  const quotes = document.getElementById('quotes');
+
+  nextBtn.addEventListener('click', () => {
+    landing.style.display = 'none';
+    quotes.style.display = 'block';
+    quotes.focus();
+  });
+</script>
+</body>
+</html>
+
+
+
+
+
+
+
